@@ -688,6 +688,11 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
                 md_file.write(
                     '[' + repo_name + '](/)/[' + lang + '](/' + lang + ')/' + parts[
                         -2] + '/' + source_path.stem + '\n\n')
+
+                # iframe to wasmified example
+                if lang == 'Cxx':
+                    md_file.write('<iframe src=' + source_path.stem + '.html width="600" height="450"></iframe>')
+
                 if baseline_path.is_file():
                     image_url = '/'.join([web_repo_url, 'blob/gh-pages/src/Testing/Baseline', parts[-3], parts[-2],
                                           'Test' + source_path.stem + '.png?raw=true'])
