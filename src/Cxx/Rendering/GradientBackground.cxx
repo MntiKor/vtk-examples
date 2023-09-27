@@ -251,42 +251,42 @@ vtkNew<vtkPolyData> ReadPolyData(fs::path const& path)
   if (extension == ".ply")
   {
     vtkNew<vtkPLYReader> reader;
-    reader->SetFileName(path.c_str());
+    reader->SetFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
   else if (extension == ".vtp")
   {
     vtkNew<vtkXMLPolyDataReader> reader;
-    reader->SetFileName(path.c_str());
+    reader->SetFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
   else if (extension == ".obj")
   {
     vtkNew<vtkOBJReader> reader;
-    reader->SetFileName(path.c_str());
+    reader->SetFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
   else if (extension == ".stl")
   {
     vtkNew<vtkSTLReader> reader;
-    reader->SetFileName(path.c_str());
+    reader->SetFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
   else if (extension == ".vtk")
   {
     vtkNew<vtkPolyDataReader> reader;
-    reader->SetFileName(path.c_str());
+    reader->SetFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
   else if (extension == ".g")
   {
     vtkNew<vtkBYUReader> reader;
-    reader->SetGeometryFileName(path.c_str());
+    reader->SetGeometryFileName(path.generic_string().c_str());
     reader->Update();
     polyData->DeepCopy(reader->GetOutput());
   }
