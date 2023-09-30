@@ -15,7 +15,8 @@ A good initial source for color maps is: [SciVisColor](https://sciviscolor.org/)
 
 Further information:
 
-- [VTK Examples - Some ColorMap to LookupTable tools]()
+- [VTK Examples - Some ColorMap to LookupTable tools](https://discourse.vtk.org/t/vtk-examples-some-colormap-to-lookuptable-tools/12237)
+- [Color maps and transfer functions](https://docs.paraview.org/en/latest/ReferenceManual/colorMapping.html)
 - [How to export ParaView colormap into a format that could be read by matplotlib](https://discourse.paraview.org/t/how-to-export-paraview-colormap-into-a-format-that-could-be-read-by-matplotlib/2436)
 - [How to export ParaView colormap into a format that could be read by matplotlib?](https://discourse.paraview.org/t/how-to-export-paraview-colormap-into-a-format-that-could-be-read-by-matplotlib/2394)
 - [Color map advice and resources](https://discourse.paraview.org/t/color-map-advice-and-resources/6452/4)

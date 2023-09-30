@@ -58,9 +58,6 @@ def main(file_name, discretize, table_size, generate_function):
     # Do some checks.
     if len(parameters['data_values']) != len(parameters['color_values']):
         sys.exit('The data values length must be the same as colors.')
-    if parameters['opacity_values'] is not None:
-        if len(parameters['opacity_values']) != len(parameters['color_values']):
-            sys.exit('The opacity values length must be the same as colors.')
 
     if generate_function is not None:
         generate_function = generate_function.lower()
@@ -145,7 +142,7 @@ def parse_xml(fn_path):
         xml_doc = etree.parse(data_file)
     data_values = list()
     color_values = list()
-    opacity_values = list()
+    # opacity_values = list()
     nan = None
     above = None
     below = None
@@ -157,9 +154,11 @@ def parse_xml(fn_path):
         color_map_details = None
         sys.exit('The attribute "ColorMap" is not found.')
     for s in xml_doc.getroot().findall('.//Point'):
+        # "o" is opacity it (along with "cms" and "isMoT") are ignored.
+        # "x" is the scalar value associated with the color (specified by "r", "g", and "b").
         data_values.append(s.attrib['x'])
         color_values.append((s.attrib['r'], s.attrib['g'], s.attrib['b']))
-        opacity_values.append(s.attrib['o'])
+        # opacity_values.append(s.attrib['o'])
     s = xml_doc.getroot().find('.//NaN')
     if s is not None:
         nan = (s.attrib['r'], s.attrib['g'], s.attrib['b'])
@@ -170,7 +169,7 @@ def parse_xml(fn_path):
     if s is not None:
         below = (s.attrib['r'], s.attrib['g'], s.attrib['b'])
     return {'path': fn_path.name, 'color_map_details': color_map_details, 'data_values': data_values,
-            'color_values': color_values, 'opacity_values': opacity_values, 'NaN': nan, 'Above': above, 'Below': below}
+            'color_values': color_values, 'NaN': nan, 'Above': above, 'Below': below}
 
 
 def make_ctf(parameters, discretize, table_size=None):
