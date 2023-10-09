@@ -643,6 +643,12 @@ def get_example_paths(src_path, available_languages, example_paths):
                 if vv in example_paths[lang]:
                     example_paths[lang].pop(vv)
 
+# check if example is excluded
+def check_excluded(exclusion_list, example_name):
+    for elem in exclusion_list:
+        if elem == example_name + '\n':
+            return True
+    return False
 
 def make_markdown_example_page(example_paths, available_languages, src_path, doc_path,
                                repo_name, web_repo_url, vtk_modules_cache,
@@ -670,6 +676,11 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
     cmake_qt_template = src_path / '/'.join(['Admin', 'VTKQtCMakeLists'])
     cmake_template = src_path / '/'.join(['Admin', 'VTKCMakeLists'])
     module_prefix = 'VTK::'
+
+    #parse WASM exclusion list
+    with open(src_path / '/'.join(['Admin', 'exclude.txt']), 'r') as exclude:
+        excluded_examples = exclude.readlines()
+
     for lang in example_paths:
         for source_path in example_paths[lang]:
             other_languages = list()
@@ -690,8 +701,8 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
                         -2] + '/' + source_path.stem + '\n\n')
 
                 # iframe to wasmified example
-                if lang == 'Cxx':
-                    md_file.write('<iframe src=' + source_path.stem + '.html width="600" height="450"></iframe>')
+                if lang == 'Cxx' and not check_excluded(excluded_examples, source_path.stem):
+                    md_file.write('<iframe src=https://vtk-wasm-examples.s3.fr-par.scw.cloud/' + source_path.stem + '/index.html width="600" height="450"></iframe>')
 
                 if baseline_path.is_file():
                     image_url = '/'.join([web_repo_url, 'blob/gh-pages/src/Testing/Baseline', parts[-3], parts[-2],
