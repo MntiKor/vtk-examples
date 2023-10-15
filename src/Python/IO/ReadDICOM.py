@@ -1,4 +1,8 @@
-from vtk import vtkDICOMImageReader,vtkImageViewer2,vtkRenderWindowInteractor,vtkNamedColors
+from vtkmodules.vtkCommonColor import vtkNamedColors
+from vtkmodules.vtkIOImage import vtkDICOMImageReader
+from vtkmodules.vtkInteractionImage import vtkImageViewer2
+from vtkmodules.vtkRenderingCore import vtkRenderWindowInteractor
+import vtkmodules.vtkRenderingOpenGL2
 
 
 def get_program_parameters():
@@ -7,7 +11,7 @@ def get_program_parameters():
     epilogue = ''''''
     parser = argparse.ArgumentParser(description=description, epilog=epilogue,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('filename', help='vase.vti')
+    parser.add_argument('filename', help='prostate.img')
     args = parser.parse_args()
     return args.filename
 
@@ -27,11 +31,10 @@ def main():
     # Visualize
     imageViewer = vtkImageViewer2()
     imageViewer.SetInputConnection(reader.GetOutputPort())
-    imageViewer.SetSize(1000,1000)
     renderWindowInteractor = vtkRenderWindowInteractor()
     imageViewer.SetupInteractor(renderWindowInteractor)
     imageViewer.Render()
-    imageViewer.GetRenderer().SetBackground(colors.GetColor3d("black"))
+    imageViewer.GetRenderer().SetBackground(colors.GetColor3d("SlateGray"))
     imageViewer.GetRenderWindow().SetWindowName("ReadDICOM")
     imageViewer.GetRenderer().ResetCamera()
     imageViewer.Render()
