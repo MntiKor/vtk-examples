@@ -87,8 +87,9 @@ If you are new to VTK then these [tutorials](#tutorial) will help to get you sta
 
 | Example Name | Description | Image |
 | -------------- | ------------- | ------- |
-[ReadDICOM](/Python/IO/ReadDICOM) | Read DICOM file.
 [HDRReader](/Python/IO/HDRReader) | Read a high-dynamic-range imaging file.
+[ReadDICOM](/Python/IO/ReadDICOM) | Read DICOM file.
+
 
 #### Output
 
