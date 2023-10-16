@@ -1064,3 +1064,4 @@
 /home/adrien/vtk-examples/src/Cxx/CompositeData/OverlappingAMR.cxx 9acdd115710a89279b71901cf7b7bde159b6d88da11c91482f89362040d299a8
 /home/adrien/vtk-examples/src/Cxx/CompositeData/Generate2DAMRDataSetWithPulse.cxx a81df852d2cf41278ccfc0e4251cb244c1b0663ce7846817d4893872de09669f
 /home/adrien/vtk-examples/src/Cxx/CompositeData/MultiBlockDataSet.cxx 2c3224725d8f19a758437249ad00367db6a998a526dbef5901bee1e8cc3a2ee7
+/home/adrien/vtk-examples/src/Cxx/Rendering/GradientBackground.cxx 1ea93b6f848c8cb167f5ccf031b27882f5a3281f850de649f9b066224f1b4fea VTK::CommonColor VTK::CommonCore VTK::CommonDataModel VTK::FiltersSources VTK::IOGeometry VTK::IOLegacy VTK::IOPLY VTK::IOXML VTK::InteractionStyle VTK::RenderingContextOpenGL2 VTK::RenderingCore VTK::RenderingFreeType VTK::RenderingGL2PSOpenGL2 VTK::RenderingOpenGL2 VTK::cli11
