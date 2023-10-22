@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 
-# noinspection PyUnresolvedReferences
-import vtkmodules.vtkRenderingOpenGL2
 from vtkmodules.vtkCommonColor import vtkNamedColors
 from vtkmodules.vtkIOImage import vtkDICOMImageReader
 from vtkmodules.vtkInteractionImage import vtkImageViewer2
-from vtkmodules.vtkRenderingCore import vtkRenderWindowInteractor
+from vtkmodules.vtkInteractionStyle import vtkInteractorStyleImage
+from vtkmodules.vtkRenderingCore import (
+    vtkActor2D,
+    vtkRenderWindowInteractor,
+    vtkTextMapper,
+    vtkTextProperty
+    )
 
-from vtk import vtkActor2D
-from vtk import vtkImageViewer2
-from vtk import vtkInteractorStyleImage
-from vtk import vtkTextMapper
-from vtk import vtkTextProperty
-from vtk import vtkInteractorStyleTrackballCamera
+
+# noinspection PyUnresolvedReferences
+
+import vtkmodules.vtkRenderingContextOpenGL2
+
+
 
 
 #Helper class to format slice status message
