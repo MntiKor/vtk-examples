@@ -82,7 +82,6 @@ class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
 
 #Read all the DICOM files in the specified directory.
 #folder=r"src/Python/IO/matlab/examples/sample_data/DICOM/digest_article"
-#/Users/ajugeorge/Documents/Python Programs/vtk-examples/src/Python/IO/matlab/examples/sample_data/DICOM/digest_article
 
 def get_program_parameters():
     import argparse
