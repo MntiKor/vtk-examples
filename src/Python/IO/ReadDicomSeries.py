@@ -14,13 +14,15 @@ from vtk import vtkTextMapper
 from vtk import vtkTextProperty
 from vtk import vtkInteractorStyleTrackballCamera
 
+
+#Helper class to format slice status message
 class StatusMessage:
     @staticmethod
     def format(slice:int,max_slice:int):
         return f"Slice Number {(slice+1)/(max_slice+1)}"
     
 
-
+#Define own interaction style
 class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
     def __init__(self,parent=None):
         super().__init__()
@@ -66,8 +68,7 @@ class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
             self.move_slice_forward
         elif key=="Down":
             self.move_slice_backward
-        #forward event
-        #super(MyVtkInteractorStyleImage, self).OnKeyDown()
+
 
     def mouseWheelForwardEvent(self,obj,event):
         if self.slice<self.max_slice:
@@ -80,15 +81,27 @@ class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
 
 
 #Read all the DICOM files in the specified directory.
-folder=r"src/Python/IO/matlab/examples/sample_data/DICOM/digest_article"
+#folder=r"src/Python/IO/matlab/examples/sample_data/DICOM/digest_article"
+#/Users/ajugeorge/Documents/Python Programs/vtk-examples/src/Python/IO/matlab/examples/sample_data/DICOM/digest_article
 
-class DicomViewer():
-    def __init__(self):
-        self.main()
+def get_program_parameters():
+    import argparse
+    description = 'Read DICOM series data'
+    epilogue = ''''''
+    parser = argparse.ArgumentParser(description=description, epilog=epilogue,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('dirname', help='DicomTestImages.zip')
+    args = parser.parse_args()
+    return args.dirname
+
+
+
 
 def main():
     colors=vtkNamedColors()
     reader=vtkDICOMImageReader()
+    folder=get_program_parameters()
+    #Read DICOM files in the specified directory
     reader.SetDirectoryName(folder)
     reader.Update()
     #Visualilze
@@ -101,7 +114,7 @@ def main():
     slice_text_prop.SetFontSize(20)
     slice_text_prop.SetVerticalJustificationToBottom()
     slice_text_prop.SetJustificationToLeft()
-
+    #Slice status message
     slice_text_mapper=vtkTextMapper()
     msg=StatusMessage.format(image_viewer.GetSliceMin(),image_viewer.GetSliceMax())
     slice_text_mapper.SetInput(msg)
@@ -136,26 +149,26 @@ def main():
 
 
     #Create an interactor with our own style (inherit from
-    #vtkInteractorStyleImage) in order to catch mousewheel and key events.
+    #vtkInteractorStyleImage in order to catch mousewheel and key events.
 
     render_window_interactor= vtkRenderWindowInteractor()
     my_interactor_style=MyVtkInteractorStyleImage()
+  
+   #Make imageviewer2 and sliceTextMapper visible to our interactorstyle
+   #to enable slice status message updates when  scrolling through the slices.
 
     my_interactor_style.set_imageviewer(image_viewer)
     my_interactor_style.set_status_mapper(slice_text_mapper)
 
-
+    #Make the interactor use our own interactorstyle
+    #cause SetupInteractor() is defining it's own default interatorstyle
+    #this must be called after SetupInteractor().
+    #renderWindowInteractor.SetInteractorStyle(myInteractorStyle);
     image_viewer.SetupInteractor(render_window_interactor)
     render_window_interactor.SetInteractorStyle(my_interactor_style)
     render_window_interactor.Render()
 
-    
-    #Make the interactor use our own interactorstyle
-    #cause SetupInteractor() is defining it's own default interatorstyle
-    #this must be called after SetupInteractor().
-
-
-
+    #Add slice status message and usage hint message to the renderer.
     image_viewer.GetRenderer().AddActor2D(slice_text_actor)
     image_viewer.GetRenderer().AddActor2D(usage_text_actor)
 
