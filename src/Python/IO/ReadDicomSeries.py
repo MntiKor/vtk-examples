@@ -54,7 +54,7 @@ class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
     def move_slice_backward(self):
         if self.slice>self.min_slice:
             self.slice-=1
-            print(f"MoveSliceForward :: Slice = {self.slice}")
+            print(f"MoveSliceBackrward :: Slice = {self.slice}")
             self.imageviewer.SetSlice(self.slice)
             msg=StatusMessage.format(self.slice,self.max_slice)
             self.status_mapper.SetInput(msg)
