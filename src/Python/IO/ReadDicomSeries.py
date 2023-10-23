@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+# noinspection PyUnresolvedReferences
 from vtkmodules.vtkCommonColor import vtkNamedColors
 from vtkmodules.vtkIOImage import vtkDICOMImageReader
 from vtkmodules.vtkInteractionImage import vtkImageViewer2
 from vtkmodules.vtkInteractionStyle import vtkInteractorStyleImage
+import vtkmodules.vtkRenderingContextOpenGL2
 from vtkmodules.vtkRenderingCore import (
     vtkActor2D,
     vtkRenderWindowInteractor,
@@ -11,21 +13,12 @@ from vtkmodules.vtkRenderingCore import (
     vtkTextProperty
     )
 
-
-# noinspection PyUnresolvedReferences
-
-import vtkmodules.vtkRenderingContextOpenGL2
-
-
-
-
 #Helper class to format slice status message
 class StatusMessage:
     @staticmethod
     def format(slice:int,max_slice:int):
-        return f"Slice Number {(slice+1)/(max_slice+1)}"
+        return f"Slice Number {slice+1}/{max_slice+1}"
     
-
 #Define own interaction style
 class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
     def __init__(self,parent=None):
@@ -66,27 +59,21 @@ class MyVtkInteractorStyleImage(vtkInteractorStyleImage):
             msg=StatusMessage.format(self.slice,self.max_slice)
             self.status_mapper.SetInput(msg)
             self.imageviewer.Render()
+
     def keyPressEvent(self,obj,event):
         key=self.GetInteractor().GetKeySym()
         if key=="Up":
-            self.move_slice_forward
+            self.move_slice_forward() 
         elif key=="Down":
-            self.move_slice_backward
-
-
-    def mouseWheelForwardEvent(self,obj,event):
-        if self.slice<self.max_slice:
-            self.move_slice_forward()
-
-    def mouseWheelBackwardEvent(self,obj,event) :
-        if self.slice>self.min_slice:
             self.move_slice_backward()
 
+    def mouseWheelForwardEvent(self,obj,event):
+        self.move_slice_forward()
 
+    def mouseWheelBackwardEvent(self,obj,event) :
+        self.move_slice_backward()
 
 #Read all the DICOM files in the specified directory.
-#folder=r"src/Python/IO/matlab/examples/sample_data/DICOM/digest_article"
-
 def get_program_parameters():
     import argparse
     description = 'Read DICOM series data'
@@ -97,9 +84,6 @@ def get_program_parameters():
     args = parser.parse_args()
     return args.dirname
 
-
-
-
 def main():
     colors=vtkNamedColors()
     reader=vtkDICOMImageReader()
@@ -107,8 +91,8 @@ def main():
     #Read DICOM files in the specified directory
     reader.SetDirectoryName(folder)
     reader.Update()
+    
     #Visualilze
-
     image_viewer= vtkImageViewer2()
     image_viewer.SetInputConnection(reader.GetOutputPort())
     #Slice status message 
@@ -123,25 +107,21 @@ def main():
     slice_text_mapper.SetInput(msg)
     slice_text_mapper.SetTextProperty(slice_text_prop)
 
-
     slice_text_actor=vtkActor2D()
     slice_text_actor.SetMapper(slice_text_mapper)
     slice_text_actor.SetPosition(15,10)
 
     #usage hint message 
-
     usage_text_prop=vtkTextProperty()
     usage_text_prop.SetFontFamilyToCourier()
     usage_text_prop.SetFontSize(14)
     usage_text_prop.SetVerticalJustificationToTop()
     usage_text_prop.SetJustificationToLeft()
-
     usage_text_mapper=vtkTextMapper()
     usage_text_mapper.SetInput(
         "Slice with mouse wheel\n  or Up/Down-Key\n- Zoom with pressed right\n "
         " mouse button while dragging"
     )
-
     usage_text_mapper.SetTextProperty(usage_text_prop)
 
     usage_text_actor=vtkActor2D ()
@@ -149,17 +129,13 @@ def main():
     usage_text_actor.GetPositionCoordinate().SetCoordinateSystemToNormalizedDisplay()
     usage_text_actor.GetPositionCoordinate().SetValue(0.05, 0.95)
 
-
-
     #Create an interactor with our own style (inherit from
     #vtkInteractorStyleImage in order to catch mousewheel and key events.
-
     render_window_interactor= vtkRenderWindowInteractor()
     my_interactor_style=MyVtkInteractorStyleImage()
   
    #Make imageviewer2 and sliceTextMapper visible to our interactorstyle
    #to enable slice status message updates when  scrolling through the slices.
-
     my_interactor_style.set_imageviewer(image_viewer)
     my_interactor_style.set_status_mapper(slice_text_mapper)
 
