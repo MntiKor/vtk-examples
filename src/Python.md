@@ -89,6 +89,8 @@ If you are new to VTK then these [tutorials](#tutorial) will help to get you sta
 | -------------- | ------------- | ------- |
 [HDRReader](/Python/IO/HDRReader) | Read a high-dynamic-range imaging file.
 [ReadDICOM](/Python/IO/ReadDICOM) | Read DICOM file.
+[ReadDICOMSeries](/Python/IO/ReadDICOMSeries) | This example demonstrates how to read a series of DICOM images and scroll through slices
+
 
 
 #### Output
