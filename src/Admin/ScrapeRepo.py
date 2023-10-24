@@ -678,7 +678,7 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
     module_prefix = 'VTK::'
 
     #parse WASM exclusion list
-    with open(src_path / '/'.join(['Admin', 'exclude.txt']), 'r') as exclude:
+    with open(src_path / '/'.join(['Admin', 'exclude_wasm.txt']), 'r') as exclude:
         excluded_examples = exclude.readlines()
 
     for lang in example_paths:
