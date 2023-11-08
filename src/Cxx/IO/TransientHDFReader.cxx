@@ -33,14 +33,14 @@ int main(int ac, char** av)
 
   vtkNew<vtkNamedColors> colors;
 
-  // Read the dataset
+  // Read the dataset.
   vtkNew<vtkHDFReader> reader;
   reader->SetFileName(av[1]);
   reader->Update();
   std::cout << "number of steps: " << reader->GetNumberOfSteps() << endl;
   auto polydata = vtkPolyData::SafeDownCast(reader->GetOutput());
 
-  // Render the dataset
+  // Render the dataset.
   vtkNew<vtkPolyDataMapper> mapper;
   mapper->SetInputData(polydata);
   mapper->SetLookupTable(GetCTF());
@@ -58,14 +58,15 @@ int main(int ac, char** av)
   vtkNew<vtkRenderWindow> renWin;
   renWin->AddRenderer(renderer);
   renWin->SetWindowName("TransientHDFReader");
+  renWin->SetSize(1024, 512);
   renWin->Render();
 
-  // Add the animation callback
+  // Add the animation callback.
   vtkNew<vtkCallbackCommand> command;
   command->SetCallback(&Animate);
   command->SetClientData(reader);
 
-  // Add the interactor
+  // Add the interactor.
   vtkNew<vtkRenderWindowInteractor> iren;
   iren->SetRenderWindow(renWin);
   iren->AddObserver(vtkCommand::TimerEvent, command);
