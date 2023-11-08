@@ -48,6 +48,8 @@ If you are new to VTK then these [tutorials](#tutorial) will help to get you sta
 [ReadSTL](/Python/IO/ReadSTL) | Read an STL file.
 [ReadUnstructuredGrid](/Python/IO/ReadUnstructuredGrid) | Using vtkUnstructuredGridReader to read a (legacy) *.vtk file
 [ReadVTP](/Python/IO/ReadVTP) | Read a VTK XML PolyData file.
+[TransientHDFReader](/Python/IO/TransientHDFReader) | Read transient data written inside a vtkhdf file.
+
 
 ###### Importers
 
