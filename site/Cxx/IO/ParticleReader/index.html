@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/ParticleReader/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example reads ascii files where each line consists of points with its position (x,y,z) and (optionally) <u>one</u> scalar or binary files in RAW 3d file format.</p> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Java/IO/ParticleReader>Java</a>), (<a href=../../../CSharp/IO/ParticleReader>CSharp</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>ParticleReader.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=c1>//</span>

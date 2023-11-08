@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/Morph3D/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example uses <a href=https://www.vtk.org/doc/nightly/html/classvtkInterpolateDataSetAttributes.html#details>vtkInterpolateDataSetAttributes</a> to interpolate datasets created using <a href=https://www.vtk.org/doc/nightly/html/classvtkImplicitModeller.html#details>vtkImplicitModeller</a>. Then <a href=https://www.vtk.org/doc/nightly/html/classvtkContourFilter.html#details>vtkContourFilter</a> extracts the resulting isosurface. An animation loop of 100 steps shows each interpolated isosurface with a 100 millisecond delay between each frame.</p> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>Morph3D.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkActor.h&gt;</span>

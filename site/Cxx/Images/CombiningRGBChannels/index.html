@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/CombiningRGBChannels/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example creates three images of a square. Each square slightly overlaps the previous square. These three layers are then interpreted as the R, G, and B channel of an RGB image, by the use of <a href=https://www.vtk.org/doc/nightly/html/classvtkImageAppendComponents.html#details>vtkImageAppendComponents</a>.</p> <div class="admonition note"> <p class=admonition-title>Note</p> <p>You MUST add 3 inputs or no output will be produced.</p> </div> <div class="admonition seealso"> <p class=admonition-title>Seealso</p> <p>For the reverse operation, see <a href=../ExtractComponents>ExtractComponents</a>.</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>CombiningRGBChannels.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkImageActor.h&gt;</span>

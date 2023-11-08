@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/StippledLine/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>VTK OpenGL2 no longer supports Stippled Lines. This example uses texture mapping to created stippled lines. Two parameters, StipplePattern and StippleRepeat, control the pattern of the stippled lines.</p> <p>StipplePattern is a 16-bit binary pattern, 1 = pixel on, 0 = pixel off.</p> <p>StippleRepeat is the stippling repeat factor of a Line, which specifies how many times each bit in the pattern is to be repeated.</p> <p>It can be tricky to set the proper pattern and repeat, so experiment.</p> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Python/Rendering/StippledLine>Python</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>StippledLine.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkActor.h&gt;</span>

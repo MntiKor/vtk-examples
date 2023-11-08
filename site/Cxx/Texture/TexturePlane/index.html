@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/TexturePlane/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Simple example of texture mapping.</p> <div class="admonition info"> <p class=admonition-title>Info</p> <p>See <a href=../../../VTKBook/07Chapter7/#Figure%207-33>Figure 7-33</a> in <a href=../../../VTKBook/07Chapter7>Chapter 7</a> in the <a href=../../../VTKBook/01Chapter1/ >VTK Textbook</a>.</p> </div> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Python/Texture/TexturePlane>Python</a>), (<a href=../../../Java/Texture/TexturePlane>Java</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>TexturePlane.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkActor.h&gt;</span>

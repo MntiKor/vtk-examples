@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/OBBDicer/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>The <a href=https://www.vtk.org/doc/nightly/html/classvtkOBBDicer.html#details>vtkOBBDicer</a> filter breaks up an input mesh into a number of pieces. The resulting mesh contains scalar point data that can be used to extract the individual pieces with a filter like vtkThresholdFilter. This examples displays the output of <a href=https://www.vtk.org/doc/nightly/html/classvtkOBBDicer.html#details>vtkOBBDicer</a> with a different color for each piece.</p> <p>The first argument is a filename for a <a href=https://www.vtk.org/doc/nightly/html/classvtkPolyData.html#details>vtkPolyData</a> reader. If not specified, then a <a href=https://www.vtk.org/doc/nightly/html/classvtkSphereSource.html#details>vtkSphereSource</a> generates the <a href=https://www.vtk.org/doc/nightly/html/classvtkPolyData.html#details>vtkPolyData</a>. The second argument is the number of pieces and is optional. The default is 4.</p> <p>The example was run with these arguments:</p> <div class=codehilite><pre><span></span><code><span class=w>   </span>OBBDicer<span class=w> </span>Armadill0<span class=w> </span><span class=m>20</span>

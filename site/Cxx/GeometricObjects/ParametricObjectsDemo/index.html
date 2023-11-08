@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/ParametricObjectsDemo/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Demonstrates the Parametric classes added by Andrew Maclean and additional classes added by Tim Meehan. The parametric spline is also included.</p> <p>Options are provided to:</p> <ul> <li>Specify a single surface (<strong>-s SURFACE_NAME</strong>)</li> <li>Color the back-face (<strong>-b</strong>)</li> <li>Add normals (<strong>-n</strong>)</li> <li>Display the geometric bounds of the object (<strong>-l</strong>)</li> </ul> <p>You can save a screenshot by pressing "k".</p> <p>With respect to your VTK build you may need to specify one or more of:</p> <div class=codehilite><pre><span></span><code>-DVTK_MODULE_ENABLE_VTK_cli11<span class=o>=</span>WANT

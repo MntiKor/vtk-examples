@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/Diagram/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example show how to create a custom <a href=https://www.vtk.org/doc/nightly/html/classvtkChartXY.html#details>vtkChartXY</a> by providing a subclass of <a href=https://www.vtk.org/doc/nightly/html/classvtkContextItem.html#details>vtkContextItem</a>.</p> <p>Also, the example uses <a href=https://www.vtk.org/doc/nightly/html/classvtkColorSeries.html#details>vtkColorSeries</a> to specify the colors of the diagram's boxes. The <a href=https://www.vtk.org/doc/nightly/html/classvtkColorSeries.html#details>vtkColorSeries</a> scheme can be specified on the command line. If an unknown scheme is used, a list of valid schemes is provided.</p> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>Diagram.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkBrush.h&gt;</span>

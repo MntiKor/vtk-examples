@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/PineRootDecimation/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Demonstrates how to apply the decimation filter to get a reduced data size and then the connectivity filter to remove noisy isosurfaces. The data is from the root system of a pine tree.</p> <p>To count the number of triangles in the polydata we do the following:</p> <h4 id=c>C++<a class=headerlink href=#c title="Permanent link">&para;</a></h4> <p>We use a lambda function</p> <div class=codehilite><pre><span></span><code><span class=k>auto</span><span class=w> </span><span class=n>NumberofTriangles</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>[](</span><span class=k>auto</span><span class=w> </span><span class=o>*</span><span class=n>pd</span><span class=p>)</span>

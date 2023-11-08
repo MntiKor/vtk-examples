@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/StyleSwitch/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>The class <a href=https://www.vtk.org/doc/nightly/html/classvtkInteractorStyleSwitch.html#details>vtkInteractorStyleSwitch</a> allows handles interactively switching between four interactor styles -- joystick actor, joystick camera, trackball actor, and trackball camera. Type 'j' or 't' to select joystick or trackball, and type 'c' or 'a' to select camera or actor. The default interactor style is joystick camera.</p> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Java/Interaction/StyleSwitch>Java</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>StyleSwitch.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkActor.h&gt;</span>

@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/MultiplePlots/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Display multiple plots by using viewports in a single render window.</p> <p>In this case, we display two graphs side-by-side.</p> <p>The difference between setting a background in the renderer and setting the chart background is shown.</p> <div class="admonition note"> <p class=admonition-title>Note</p> </div> <p>This example was prompted by this discussion <a href=https://discourse.vtk.org/t/vtk-chart-background-shifted-towards-origin/5890>vtk chart background shifted towards origin</a>.</p> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Python/Plotting/MultiplePlots>Python</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>MultiplePlots.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkAxis.h&gt;</span>

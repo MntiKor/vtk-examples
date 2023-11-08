@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/InterpolateCamera/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h2 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h2> <p>This example uses <a href=https://www.vtk.org/doc/nightly/html/classvtkCameraInterpolator.html#details>vtkCameraInterpolator</a> to generate a smooth interpolation between camera views. The key points for the cameras' positions are generated from the <a href=https://www.vtk.org/doc/nightly/html/classvtkPolyData.html#details>vtkPolyData</a>'s bounding box. The cameras' focal points are at the center of the polydata.</p> <p>The key points are computed from the corners of the bounding box. They are pushed out along a vector from the center to the corner point. The amount of pushing is a random multiplier of the range of the data.</p> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>InterpolateCamera.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=hll><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;vtkActor.h&gt;</span>

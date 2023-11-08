@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/PBR_Skybox/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Demonstrates physically based rendering using image based lighting and a skybox.</p> <p>Physically based rendering sets color, metallicity and roughness of the object, sliders are provided so that you can experiment with the various parameters.</p> <p>Image based lighting uses a cubemap texture to specify the environment. A Skybox is used to create the illusion of distant three-dimensional surroundings. Textures for the image based lighting and the skybox are supplied from an HDR or JPEG equirectangular Environment map or cubemap consisting of six image files.</p> <p>A good source for Skybox HDRs and Textures is <a href=https://polyhaven.com/all>Poly Haven</a>. Start with the 4K HDR versions of Skyboxes.</p> <p>The parameters used to generate the example image are loaded from a JSON file with the same name as the example. In this case:</p> <div class=codehilite><pre><span></span><code>&lt;DATA&gt;/PBR_Skybox.json

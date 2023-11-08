@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/ShepardInterpolation/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>Use <a href=https://www.vtk.org/doc/nightly/html/classvtkShepardMethod.html#details>vtkShepardMethod</a> to interpolate the scalars of a <a href=https://www.vtk.org/doc/nightly/html/classvtkPolyData.html#details>vtkPolyData</a>. The zero-contour of the original and interpoltated scalars are extracted with <a href=https://www.vtk.org/doc/nightly/html/classvtkContourFilter.html#details>vtkContourFilter</a>. The original data is shown in red and the interpolated data in shown in yellow.</p> <p>Usage:</p> <div class=codehilite><pre><span></span><code>ShepardInterpolation<span class=w> </span>polydata<span class=w> </span><span class=o>[</span>resolution<span class=o>]</span>

@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/NamedColors/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example demonstrates the usage of the <a href=https://www.vtk.org/doc/nightly/html/classvtkNamedColors.html#details>vtkNamedColors</a> class. Some helper functions are also implemented.</p> <p>A cone is created and contoured using the BandedPolyDataContourFilter, it is then colored using a LookupTable where the colors have been assigned using color names.</p> <p>A list of available color names and any synonyms are also output.</p> <div class="admonition tip"> <p class=admonition-title>Other languages</p> <p>See (<a href=../../../Python/Visualization/NamedColors>Python</a>)</p> </div> <div class="admonition question"> <p class=admonition-title>Question</p> <p>If you have a question about this example, please use the <a href=https://discourse.vtk.org/ >VTK Discourse Forum</a></p> </div> <h3 id=code>Code<a class=headerlink href=#code title="Permanent link">&para;</a></h3> <p><strong>NamedColors.cxx</strong></p> <div class=codehilite><pre><span></span><code><span class=cm>/*</span>

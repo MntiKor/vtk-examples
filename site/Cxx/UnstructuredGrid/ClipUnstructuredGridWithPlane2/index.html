@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/ClipUnstructuredGridWithPlane2/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>The example uses <a href=https://www.vtk.org/doc/nightly/html/classvtkClipDataSet.html#details>vtkClipDataSet</a> to clip a <a href=https://www.vtk.org/doc/nightly/html/classvtkUnstructuredGrid.html#details>vtkUnstructuredGrid</a>. The resulting output and clipped output are presented in yellow and red respectively. To illustrate the clipped interfaces, the example uses a <a href=https://www.vtk.org/doc/nightly/html/classvtkTransform.html#details>vtkTransform</a> to rotate each output about their centers.</p> <p>Note that this clipping filter does not retain the original cells if they are not clipped.</p> <p>After exiting, the example reports the number of each cell type for each output:</p> <div class=codehilite><pre><span></span><code>The inside dataset contains a

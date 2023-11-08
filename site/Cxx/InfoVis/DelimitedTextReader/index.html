@@ -68,7 +68,7 @@ function registerListener(event, func) {
                             frame.style.display = "none";
                             frame.src = "about:blank";
                             btn.innerText = "View Live";
-                            window.open("http://localhost:1234", "_blank");
+                            window.open('https://vtk-wasm-examples.s3.fr-par.scw.cloud/DelimitedTextReader/index.html', "_blank");
                         }
                     }
                     </script> <hr> <h3 id=description>Description<a class=headerlink href=#description title="Permanent link">&para;</a></h3> <p>This example takes a plain text file of coordinates and normals (x y z nx ny nz) and reads them into a <a href=https://www.vtk.org/doc/nightly/html/classvtkPolyData.html#details>vtkPolyData</a> and displays them on the screen. This can be easily changed to reading a file with any delimiter by changing the argument of <code>Reader-&gt;SetFieldDelimiterCharacters(" ");</code></p> <p>Here is an example file:</p> <div class=codehilite><pre><span></span><code> 0.0 0.0 0.0 1.0 2.0 3.0
