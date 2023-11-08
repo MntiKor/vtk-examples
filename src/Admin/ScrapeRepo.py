@@ -699,11 +699,6 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
                 md_file.write(
                     '[' + repo_name + '](/)/[' + lang + '](/' + lang + ')/' + parts[
                         -2] + '/' + source_path.stem + '\n\n')
-
-                # iframe to wasmified example
-                if lang == 'Cxx' and not check_excluded(excluded_examples, source_path.stem):
-                    md_file.write('<iframe src=https://vtk-wasm-examples.s3.fr-par.scw.cloud/' + source_path.stem + '/index.html width="600" height="450"></iframe>')
-
                 if baseline_path.is_file():
                     image_url = '/'.join([web_repo_url, 'blob/gh-pages/src/Testing/Baseline', parts[-3], parts[-2],
                                           'Test' + source_path.stem + '.png?raw=true'])
@@ -713,6 +708,12 @@ def make_markdown_example_page(example_paths, available_languages, src_path, doc
                         '<img style="border:2px solid beige;float:center" src="' +
                         image_url + '" width="256" />' + '\n')
                     md_file.write('</a>' + '\n')
+
+                # button to wasmified example
+                if lang == 'Cxx' and not check_excluded(excluded_examples, source_path.stem):
+                    md_file.write('\n<button class="wasm-button" onclick="window.open(\'https://vtk-wasm-examples.s3.fr-par.scw.cloud/'
+                                  + source_path.stem + '/index.html\',\'_blank\')">View Live</button>\n')
+
                     md_file.write('<hr>\n')
                     md_file.write('\n')
 

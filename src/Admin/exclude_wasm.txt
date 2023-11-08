@@ -250,3 +250,17 @@ MarchingCasesC
 MarchingCasesD
 OfficeA
 PineRootConnectivityA
+BarChartQt
+BorderWidgetQt
+EventQtSlotConnect
+MinimalQtVTKApp
+RenderWindowNoUiFile
+RenderWindowUISingleInheritance
+ShareCameraQt
+ShowEvent
+SideBySideRenderWindowsQt
+SubdivisionDemo
+FullScreen
+AdjacentVertexIterator
+BoostBreadthFirstSearchTree
+MutableGraphHelper
