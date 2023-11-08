@@ -9,5 +9,12 @@ height:30px!important;
     box-sizing: content-box;
 }
 
+.wasm-button {
+  background: #4051b5;
+  margin: 10px;
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+}
 /* Using semitransparent Lavender instead of a gray: rgba(240,240,240,0.8) */
 .codehilite .hll { background-color: rgba(230,230,250,0.6) }
