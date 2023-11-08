@@ -1871,6 +1871,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mntikor.github.io/vtk-examples/site/Cxx/IO/TransientHDFReader/</loc>
+         <lastmod>2023-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mntikor.github.io/vtk-examples/site/Cxx/IO/VRMLImporter/</loc>
          <lastmod>2023-11-08</lastmod>
          <changefreq>daily</changefreq>
@@ -7892,6 +7897,11 @@
     </url>
     <url>
          <loc>https://mntikor.github.io/vtk-examples/site/Python/IO/ReadVTP/</loc>
+         <lastmod>2023-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mntikor.github.io/vtk-examples/site/Python/IO/TransientHDFReader/</loc>
          <lastmod>2023-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
