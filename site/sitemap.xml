@@ -9495,4 +9495,14 @@
          <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://mntikor.github.io/vtk-examples/site/WASM/NoWASMIntegration/</loc>
+         <lastmod>2023-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mntikor.github.io/vtk-examples/site/WASM/WASM/</loc>
+         <lastmod>2023-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
