@@ -1,1 +1,1 @@
-# Adding WASM preview
+# Adding WASM preview to an example

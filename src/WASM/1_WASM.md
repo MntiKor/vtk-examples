@@ -1,10 +1,9 @@
 # The "View Live" option (only available for Cxx examples)
 
-## WebAssembly
+## What is WebAssembly ?
 
-WebAssembly ([WASM](https://webassembly.org/)) is a new way of running code
-inside a web page. It's a technology which allows a C/C++ code to be executed
-by the web browser as if it was a JS script.
+[WebAssembly](https://webassembly.org/) (WASM for short) is a technology which
+allows a C/C++ code to be executed by the web browser as if it was a JS script.
 
 It allows integration of small bits of code inside a web page,
 and even full size web apps that are derived from a desktop app.
@@ -14,16 +13,12 @@ For more examples of what WASM is able to do, take a look at
 
 ## VTK-WASM
 
-With the new web graphics APIs that appeared recently (WebGL, WebGPU...),
+By making VTK able to use WebGL instead of the usual OpenGL,
 we have been able to build VTK for WebAssembly. Not all modules are available
 but we keep on improving VTK-WASM, and this website is a display of what is
 working, and what is not.
 
-If you want to build your own VTK project in WebAssembly, a docker image is available
-[here](https://hub.docker.com/r/kitware/vtk-wasm).
-
-To build VTK-WASM manually, we use [Emscripten](https://emscripten.org/). You will
-find instructions on how to build and use it [here](https://docs.vtk.org/en/latest/advanced/build_wasm_emscripten.html).
+If you want to build your own VTK project in WebAssembly, take a look [here](3_BuildingWASM).
 
 If your browser is having issues loading or running WASM examples, ensure
 Hardware Acceleration is enabled, and if you have a GPU, that it's in use.
