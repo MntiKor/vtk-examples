@@ -9496,12 +9496,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mntikor.github.io/vtk-examples/site/WASM/NoWASMIntegration/</loc>
+         <loc>https://mntikor.github.io/vtk-examples/site/WASM/1WASM/</loc>
          <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mntikor.github.io/vtk-examples/site/WASM/WASM/</loc>
+         <loc>https://mntikor.github.io/vtk-examples/site/WASM/2NoWASMIntegration/</loc>
          <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
