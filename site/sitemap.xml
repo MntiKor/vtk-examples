@@ -8751,11 +8751,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mntikor.github.io/vtk-examples/site/Python/Utilities/RescaleReverseLUT/</loc>
-         <lastmod>2024-01-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://mntikor.github.io/vtk-examples/site/Python/Utilities/ResetCameraOrientation/</loc>
          <lastmod>2024-01-12</lastmod>
          <changefreq>daily</changefreq>
